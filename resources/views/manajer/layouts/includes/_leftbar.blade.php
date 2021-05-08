@@ -32,10 +32,10 @@
 
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{url('/data_akun')}}">Approval Kwitansi</a>
-            <a class="collapse-item" href="{{url('/data_akun')}}">Draft Pengeluaran</a>
-            <a class="collapse-item" href="{{url('/data_akun')}}">Hutang</a>
-            <a class="collapse-item" href="{{url('/data_akun')}}">Surat</a>
+            <a class="collapse-item" href="{{url('/approv-kwitansi')}}">Approval Kwitansi</a>
+            <a class="collapse-item" href="{{url('/draft-pengeluaran')}}">Draft Pengeluaran</a>
+            <a class="collapse-item" href="{{url('/hutang')}}">Hutang</a>
+            <a class="collapse-item" href="{{url('/surat')}}">Surat</a>
             <!-- <a class="collapse-item" href="/notfound">Data Order Paket</a> -->
           </div>
         </div>
@@ -43,7 +43,7 @@
 
       <!-- Nav Item - Utilities transaksi-->
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/dashboard')}}">
+        <a class="nav-link" href="{{url('/transaksi')}}">
           <i class="fas fa-shopping-cart"></i>
           <span>Transaksi</span></a>
       </li>
@@ -56,11 +56,28 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{url('/jurnal_umum')}}">Keuangan</a>
-            <a class="collapse-item" href="{{url('/jurnal_umum')}}">Konsumen</a>
-            <a class="collapse-item" href="{{url('/jurnal_umum')}}">Proyek</a>
-            <a class="collapse-item" href="{{url('/jurnal_umum')}}">Marketing</a>
-            <a class="collapse-item" href="{{url('/jurnal_umum')}}">Transaksi</a>
+            <h6 class="collapse-header">Keuangan:</h6>
+            <a class="collapse-item" href="{{url('/kartu-kontrol')}}">Kartu Kontrol</a>
+            <a class="collapse-item" href="{{url('/rekap-piutang')}}">Rekap Piutang</a>
+            <a class="collapse-item" href="{{url('/lap-pemasukan')}}">Laporan Pemasukan</a>
+            <a class="collapse-item" href="{{url('/lap-pengeluaran')}}">Laporan Pengeluaran</a>
+            <a class="collapse-item" href="{{url('/lap-neraca')}}">Laporan Neraca</a>
+            <a class="collapse-item" href="{{url('/lap-laba-rugi')}}">Laporan Laba Rugi</a>
+            <a class="collapse-item" href="{{url('/lap-kas')}}">Laporan Kas</a>
+            <h6 class="collapse-header">Konsumen:</h6>
+            <a class="collapse-item" href="{{url('/daftar-calon')}}">Daftar Calon Konsumen</a>
+            <a class="collapse-item" href="{{url('/lap-followup')}}">Laporan Jejak Follow Up</a>
+            <a class="collapse-item" href="{{url('/daftar-konsumen')}}">Daftar Konsumen</a>
+            <h6 class="collapse-header">Proyek:</h6>
+            <a class="collapse-item" href="{{url('/lap-legalitas')}}">Laporan Legalitas</a>
+            <a class="collapse-item" href="{{url('/lap-dana')}}">Laporan Dana dan Material</a>
+            <h6 class="collapse-header">Marketing:</h6>
+            <a class="collapse-item" href="{{url('/sales')}}">Sales</a>
+            <h6 class="collapse-header">Transaksi:</h6>
+            <a class="collapse-item" href="{{url('/lap-transaksi')}}">Laporan Transaksi</a>
+            <a class="collapse-item" href="{{url('/riwayat-transaksi')}}">History Transaksi</a>
+            <a class="collapse-item" href="{{url('/pricelist')}}">Sales Pricelist</a>
+            <a class="collapse-item" href="{{url('/lap-pembatalan')}}">Laporan Pembatalan Transaksis</a>
           </div>
         </div>
       </li>
@@ -73,8 +90,8 @@
         </a>
         <div id="collapsethree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{url('/buku_besar')}}">Proyek</a>
-            <a class="collapse-item" href="{{url('/buku_besar')}}">Unit Perumahan</a>
+            <a class="collapse-item" href="{{url('/proyek')}}">Proyek</a>
+            <a class="collapse-item" href="{{url('/unit-rumah')}}">Unit Perumahan</a>
           </div>
         </div>
       </li>
@@ -86,15 +103,15 @@
           <span>Konfigurasi Umum</span></a>
           <div id="collapsefour" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{url('/neraca_saldo')}}">Set Email</a>
-            <a class="collapse-item" href="{{url('/neraca_saldo')}}">Set Surat</a>
+            <a class="collapse-item" href="{{url('/set-email')}}">Set Email</a>
+            <a class="collapse-item" href="{{url('/set-surat')}}">Set Surat</a>
           </div>
         </div>
       </li>
 
       <!-- Nav Item - Utilities about-->
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/dashboard')}}">
+        <a class="nav-link" href="{{url('/about')}}">
           <i class="fas fa-info-circle"></i>
           <span>About</span></a>
       </li>
