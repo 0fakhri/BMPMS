@@ -57,7 +57,7 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Keuangan:</h6>
-            <a class="collapse-item" href="{{url('/kartu-kontrol')}}">Kartu Kontrol</a>
+            <a class="collapse-item" href="{{url('/perumahan')}}">Kartu Kontrol</a>
             <a class="collapse-item" href="{{url('/rekap-piutang')}}">Rekap Piutang</a>
             <a class="collapse-item" href="{{url('/lap-pemasukan')}}">Laporan Pemasukan</a>
             <a class="collapse-item" href="{{url('/lap-pengeluaran')}}">Laporan Pengeluaran</a>

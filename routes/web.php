@@ -27,3 +27,9 @@ Route::get('/approv-kwitansi', function () {
     Route::get('/draft-pengeluaran', function () {
         return view ('manajer.draft_pengeluaran');
     });
+    Route::get('/kartu-kontrol', function () {
+      return view ('manajer.keuangan.kartu_kontrol');
+  });
+  Route::get('/perumahan', function () {
+    return view ('manajer.keuangan.pilihPerumahan');
+});

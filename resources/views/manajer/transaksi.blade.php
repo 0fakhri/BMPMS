@@ -29,7 +29,7 @@
   @endif
 <ol class="breadcrumb">
   <li><i class="fa fa-home"></i><a href="/dashboard">&nbsp;Home&nbsp;</a></li>
-  <li>&#47;&nbsp;<i class="fas fa"></i>&nbsp;DAFTAR SURAT&nbsp;</li>
+  <li>&#47;&nbsp;<i class="fas fa"></i>&nbsp;Daftar Transaksi&nbsp;</li>
 </ol>
 
 <!-- Modal tmbah paket -->
@@ -82,7 +82,7 @@
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <div class="col-sm-12 col-md-6">
-      <h6 class="m-0 font-weight-bold text-primary">DAFTAR SURAT</h6>
+      <h6 class="m-0 font-weight-bold text-primary">Daftar Transaksi</h6>
     </div>
   </div>
   <div class="card-body" style="font-size: 15px;">
@@ -102,14 +102,15 @@
         </div>
         <thead style="background-color: #ddd;">
           <tr class="text-center">
-            <th>No.</th>
-            <th>Nama Konsumen</th>
+            <th>No. SPR</th>
+            <th>Nama</th>
             <th>Kapling/Unit</th>
-            <th>Nama Surat</th>
-            <th>Tanggal</th>
-            <th>Diajukan Oleh</th>
-            <th>Sudah diapprove oleh</th>
-            <th>Proses</th>
+            <th>Harga Total Setelah Penambahan</th>
+            <th>Cara Pembayaran</th>
+            <th>Tanggal Transaksi</th>
+            <th>Status</th>
+            <th>Status Manajer</th>
+            <th>Dibuat Oleh</th>
             <th>Aksi</th>
           </tr>
         </thead>
