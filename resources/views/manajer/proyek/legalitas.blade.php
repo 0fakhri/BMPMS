@@ -84,12 +84,16 @@
         
         <thead style="background-color: #ddd;">
           <tr class="text-center">
-            <th>Nama Marketing</th>
-            <th>Email</th>
-            <th>Total Konsumen</th>
-            <th>Total Calon Konsumen</th>
-            <th>Detail Calon Konsumen</th>
-            <th>Hasil Penjualan</th>
+            <th>Nama</th>
+            <th>Kelompok Proyek</th>
+            <th>Alamat</th>
+            <th>HPP Tanah</th>
+            <th>Biaya Bangun</th>
+            <th>Tipe</th>
+            <th>LT (m2)</th>
+            <th>LB (m2)</th>
+            <th>Harga</th>
+            <th>Dokumen</th>
           </tr>
         </thead>
        
@@ -99,8 +103,10 @@
            <th>gagag</th>
            <th>gagag</th>
            <th>gagag</th>
-           <th><a href="#" class="badge badge-primary">Lihat</a></th>
-           <th><a href="#" class="badge badge-primary">Lihat</a></th>
+           <th>gagag</th>
+           <th>gagag</th>
+           <th>gagag</th>
+           <th>gagag</th>
           </tr>
         </tbody>
         

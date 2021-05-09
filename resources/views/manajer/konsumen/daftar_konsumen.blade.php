@@ -84,12 +84,15 @@
         
         <thead style="background-color: #ddd;">
           <tr class="text-center">
-            <th>Nama Marketing</th>
+            <th>Kode</th>
+            <th>Nama</th>
+            <th>Kartu ID</th>
+            <th>Alamat</th>
+            <th>Surat</th>
+            <th>Telp/HP</th>
             <th>Email</th>
-            <th>Total Konsumen</th>
-            <th>Total Calon Konsumen</th>
-            <th>Detail Calon Konsumen</th>
-            <th>Hasil Penjualan</th>
+            <th>Diinput Oleh</th>
+            <th>Aksi</th>
           </tr>
         </thead>
        
@@ -99,7 +102,11 @@
            <th>gagag</th>
            <th>gagag</th>
            <th>gagag</th>
-           <th><a href="#" class="badge badge-primary">Lihat</a></th>
+           <th>gagag</th>
+           <th>gagag</th>
+           <th>gagag</th>
+           <th>gagag</th>
+           <th>gagag</th>
            <th><a href="#" class="badge badge-primary">Lihat</a></th>
           </tr>
         </tbody>
