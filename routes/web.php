@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', 'home@index');
+// Route::get('/', 'home@index');
   Route::get('/data_akun', 'dataakun@index');
   Route::post('/data_akun/create','dataakun@create');
   Route::get('/data_akun/edit/{id}', 'dataakun@edit');
   Route::post('/data_akun/update/{id}', 'dataakun@update');
   Route::get('/data_akun/{id}','dataakun@show');
   Route::get('/dashboard','dataakun@show');
-  Route::get('/home', function () {
+  Route::get('/', function () {
     return view ('manajer.dashboard');
     });
 Route::get('/approv-kwitansi', function () {

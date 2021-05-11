@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Nguli Akuntansi</title>
+  <title>BMPMS</title>
   <link rel="icon" type="image/png" sizes="20x20" href="{{asset('icon.png')}}">
   <!-- Custom fonts for this template-->
   <link href="{{asset('admin/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">

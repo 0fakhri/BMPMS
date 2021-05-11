@@ -29,7 +29,7 @@
   @endif
 <ol class="breadcrumb">
   <li><i class="fa fa-home"></i><a href="/dashboard">&nbsp;Home&nbsp;</a></li>
-  <li>&#47;&nbsp;<i class="fas fa-check"></i>&nbsp;Approval Kwitansi&nbsp;</li>
+  <li>&#47;&nbsp;</i>&nbsp;Approval Kwitansi&nbsp;</li>
 </ol>
 
 <!-- Modal tmbah paket -->
@@ -71,13 +71,6 @@
     </div>
 
 <!-- end Modal tmbah paket -->
-<div class="row" style="margin-bottom:10px">
-  <div class="col-sm-12 col-md-6">
-    <button type="button" class="btn btn-danger btn-rounded btn-outline
-    hidden-xs hidden-sm waves-effect waves-light" data-toggle="modal" data-target="#createdata">
-    <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>Tambah AKUN</button>
-  </div>
-</div>
 <!-- Table -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
@@ -89,17 +82,14 @@
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <div class="row">
-          <form  method="get" action="{{url('/data_paket_pekerjaan')}}" role="search">
+        
+          <!-- <form  method="get" action="{{url('/data_paket_pekerjaan')}}" role="search"> -->
             <div class="col-sm-12 col-md-4">
-              <div id="dataTable_filter" class="dataTables_filter">
-                <label>Search:<input name="cari" type="text" class="form-control form-control-sm" placeholder="" aria-describedby="basic-addon2"></label>
-                <button class="btn btn-outline-info" type="submit" style="height: 2rem" >
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
+            <a href="">Daftar kwitansi yang sudah diapprove klik <span style="color: red;">di sini</span></a>
             </div>
-          </form>
+          <!-- </form> -->
         </div>
+        <hr>
         <thead style="background-color: #ddd;">
           <tr class="text-center">
             <th>Approve</th>
