@@ -21,9 +21,9 @@
   Route::get('/', function () {
     return view ('manajer.dashboard');
     });
-Route::get('/approv-kwitansi', function () {
-        return view ('manajer.approval_kwitansi');
-    });
+  Route::get('/user', function () {
+          return view ('manajer.user');
+      });
     Route::get('/draft-pengeluaran', function () {
         return view ('manajer.draft_pengeluaran');
     });
