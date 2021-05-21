@@ -35,6 +35,11 @@
           <span>Data Kebutuhan Proyek</span></a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="{{url('/konsumen')}}">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Data Konsumen</span></a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="{{url('/spr')}}">
           <i class="fas fa-shopping-cart"></i>
           <span>Data SPR</span></a>
@@ -60,7 +65,7 @@
           <span>Data Tipe Perumahan</span></a>
       </li>
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-check"></i>
           <span>Approval</span>
@@ -72,20 +77,19 @@
             <a class="collapse-item" href="{{url('/draft-pengeluaran')}}">Draft Pengeluaran</a>
             <a class="collapse-item" href="{{url('/hutang')}}">Hutang</a>
             <a class="collapse-item" href="{{url('/surat')}}">Surat</a>
-            <!-- <a class="collapse-item" href="/notfound">Data Order Paket</a> -->
           </div>
         </div>
-      </li>
+      </li> -->
 
       <!-- Nav Item - Utilities transaksi-->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="{{url('/transaksi')}}">
           <i class="fas fa-shopping-cart"></i>
           <span>Transaksi</span></a>
-      </li>
+      </li> -->
 
       <!-- Nav Item - Utilities Collapse Menu laporan-->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-folder-open"></i>
           <span>Laporan</span>
@@ -116,10 +120,10 @@
             <a class="collapse-item" href="{{url('/lap-pembatalan')}}">Laporan Pembatalan Transaksis</a>
           </div>
         </div>
-      </li>
+      </li> -->
 
       <!-- Nav Item - Utilities Collapse Menu Setting Proyek-->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsethree" aria-expanded="true" aria-controls="collapsethree">
           <i class="fas fa-map"></i>
           <span>Setting Proyek</span>
@@ -130,10 +134,10 @@
             <a class="collapse-item" href="{{url('/unit-rumah')}}">Unit Perumahan</a>
           </div>
         </div>
-      </li>
+      </li> -->
 
       <!-- Nav Item - Utilities Collapse Menu Konfigurasi umum-->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsefour" aria-expanded="true" aria-controls="collapsefour">
           <i class="fas fa-cogs"></i>
           <span>Konfigurasi Umum</span></a>
@@ -143,14 +147,14 @@
             <a class="collapse-item" href="{{url('/set-surat')}}">Set Surat</a>
           </div>
         </div>
-      </li>
+      </li> -->
 
       <!-- Nav Item - Utilities about-->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="{{url('/about')}}">
           <i class="fas fa-info-circle"></i>
           <span>About</span></a>
-      </li>
+      </li> -->
 
       <!-- Divider -->
       <hr class="sidebar-divider">

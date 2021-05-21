@@ -29,7 +29,7 @@
   @endif
 <ol class="breadcrumb">
   <li><i class="fa fa-home"></i><a href="/dashboard">&nbsp;Home&nbsp;</a></li>
-  <li>&#47;&nbsp;<i class="fas fa"></i>&nbsp;User&nbsp;</li>
+  <li>&#47;&nbsp;<i class="fas fa"></i>&nbsp;Tipe Perumahan&nbsp;</li>
 </ol>
 
 <!-- end Modal tmbah paket -->
@@ -55,32 +55,26 @@
         <form action="" method="POST" enctype="multipart/form-data">
           {{csrf_field()}}
           <div class="form-group ">
-            <label >Nama</label>
-            <input name="nama_akun" type="text" class="form-control" id="nama_akun">
+            <label >Luas Tanah</label>
+            <input name="nama_akun" type="number" class="form-control" id="nama_akun">
             @if($errors->has('akun'))
               <span class="help-block">{{($errors->first('nama_akun'))}}</span>
             @endif
           </div>
           <div class="form-group">
-            <label >Email</label>
-            <input name="kode_akun" type="text" class="form-control" id="kode_akun">
+            <label >Luas Bangunan</label>
+            <input name="kode_akun" type="number" class="form-control" id="kode_akun">
           </div>
           <div class="form-group">
-            <label >Password</label>
-            <input name="kode_akun" type="text" class="form-control" id="kode_akun">
-            <!-- <input type="password" value="FakePSW" id="myInput">
-            <input type="checkbox" onclick="myFunction()">Show Password  -->
+            <label>Harga</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">Rp</div>
+              </div>
+              <input type="text" class="form-control" id="inlineFormInputGroup">
+            </div>
           </div>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Role</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option disabled>Role</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
+          
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
             <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#showmessage">Tambah data</button>
@@ -96,7 +90,7 @@
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <div class="col-sm-12 col-md-6">
-      <h6 class="m-0 font-weight-bold text-primary">User</h6>
+      <h6 class="m-0 font-weight-bold text-primary">Tipe Perumahan</h6>
     </div>
   </div>
   <div class="card-body" style="font-size: 15px;">
@@ -105,11 +99,9 @@
         
         <thead style="background-color: #ddd;">
           <tr class="text-center">
-            <th>Id</th>
-            <th>Nama</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Role</th>
+            <th>Lunas Tanah</th>
+            <th>Lunas Bangunan</th>
+            <th>Harga</th>
             <th>Aksi</th>
           </tr>
         </thead>
@@ -119,10 +111,8 @@
             <th>gagag</th>
             <th>gagag</th>
             <th>gagag</th>
-            <th>gagag</th>
-            <th>gagag</th>
             <th>
-              <a href="{{url('/user/edit')}}" class="btn btn-primary">Update</a><br>
+              <a href="{{url('/tipe-perumahan/edit')}}" class="btn btn-primary">Update</a><br>
               <a href="#" class="btn btn-danger">Delete</a>
             </th>
           </tr>

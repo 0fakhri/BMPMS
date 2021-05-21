@@ -29,7 +29,7 @@
   @endif
 <ol class="breadcrumb">
   <li><i class="fa fa-home"></i><a href="/dashboard">&nbsp;Home&nbsp;</a></li>
-  <li>&#47;&nbsp;<i class="fas fa"></i>&nbsp;User&nbsp;</li>
+  <li>&#47;&nbsp;<i class="fas fa"></i>&nbsp;Data Legalitas&nbsp;</li>
 </ol>
 
 <!-- end Modal tmbah paket -->
@@ -54,27 +54,29 @@
       <div class="modal-body">
         <form action="" method="POST" enctype="multipart/form-data">
           {{csrf_field()}}
+          <div class="form-group">
+            <label >No Legalitas</label>
+            <input name="kode_akun" type="number" class="form-control" id="kode_akun">
+          </div>
           <div class="form-group ">
-            <label >Nama</label>
-            <input name="nama_akun" type="text" class="form-control" id="nama_akun">
+            <label >Tanggal Terbit</label>
+            <input name="nama_akun" type="date" class="form-control" id="nama_akun">
             @if($errors->has('akun'))
               <span class="help-block">{{($errors->first('nama_akun'))}}</span>
             @endif
           </div>
           <div class="form-group">
-            <label >Email</label>
+            <label >No Unit</label>
+            <input name="kode_akun" type="number" class="form-control" id="kode_akun">
+          </div>
+          <div class="form-group">
+            <label >Status Legalitas</label>
             <input name="kode_akun" type="text" class="form-control" id="kode_akun">
           </div>
           <div class="form-group">
-            <label >Password</label>
-            <input name="kode_akun" type="text" class="form-control" id="kode_akun">
-            <!-- <input type="password" value="FakePSW" id="myInput">
-            <input type="checkbox" onclick="myFunction()">Show Password  -->
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Role</label>
+            <label for="exampleFormControlSelect1">Status Legalitas</label>
             <select class="form-control" id="exampleFormControlSelect1">
-              <option disabled>Role</option>
+              <option disabled selected>Status Legalitas</option>
               <option>2</option>
               <option>3</option>
               <option>4</option>
@@ -91,12 +93,11 @@
   </div>
 </div>
 
-<!-- end Modal tmbah paket -->
 <!-- Table -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <div class="col-sm-12 col-md-6">
-      <h6 class="m-0 font-weight-bold text-primary">User</h6>
+      <h6 class="m-0 font-weight-bold text-primary">Data Legalitas</h6>
     </div>
   </div>
   <div class="card-body" style="font-size: 15px;">
@@ -105,12 +106,10 @@
         
         <thead style="background-color: #ddd;">
           <tr class="text-center">
-            <th>Id</th>
-            <th>Nama</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Role</th>
-            <th>Aksi</th>
+            <th>No Legalitas</th>
+            <th>Tanggal Terbit</th>
+            <th>No Unit</th>
+            <th>Status Legalitas</th>
           </tr>
         </thead>
        
@@ -120,11 +119,6 @@
             <th>gagag</th>
             <th>gagag</th>
             <th>gagag</th>
-            <th>gagag</th>
-            <th>
-              <a href="{{url('/user/edit')}}" class="btn btn-primary">Update</a><br>
-              <a href="#" class="btn btn-danger">Delete</a>
-            </th>
           </tr>
         </tbody>
         
