@@ -20,13 +20,13 @@
 @endif
 @if($errors->has([]))
 <!-- Modal -->
-    <div class="alert alert-danger" role="alert">
-           <span class="help-block">Data tidak boleh kosong / Data yang diisi tidak valid, isi data dengan benar</span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-    </div>
-  @endif
+<div class="alert alert-danger" role="alert">
+  <span class="help-block">Data tidak boleh kosong / Data yang diisi tidak valid, isi data dengan benar</span>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
 <ol class="breadcrumb">
   <li><i class="fa fa-home"></i><a href="/dashboard">&nbsp;Home&nbsp;</a></li>
   <li>&#47;&nbsp;<i class="fas fa"></i>&nbsp;Data Konsumen&nbsp;</li>
@@ -37,7 +37,7 @@
   <div class="col-sm-12 col-md-6">
     <button type="button" class="btn btn-danger btn-rounded btn-outline
     hidden-xs hidden-sm waves-effect waves-light" data-toggle="modal" data-target="#createdata">
-    <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>Tambah Data</button>
+      <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>Tambah Data</button>
   </div>
 </div>
 
@@ -52,45 +52,45 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="{{url('/konsumen')}}" method="POST" enctype="multipart/form-data">
           {{csrf_field()}}
           <div class="form-group ">
-            <label >Nama</label>
-            <input name="nama_akun" type="text" class="form-control" id="nama_akun">
-            @if($errors->has('akun'))
-              <span class="help-block">{{($errors->first('nama_akun'))}}</span>
+            <label>NamaLengkap</label>
+            <input name="NamaLengkap" type="text" class="form-control" id="NamaLengkap">
+            @if($errors->has('NamaLengkap'))
+            <span class="help-block">{{($errors->first('NamaLengkap'))}}</span>
             @endif
           </div>
           <div class="form-group">
-            <label >Tanggal lahir</label>
-            <input name="kode_akun" type="date" class="form-control" id="kode_akun">
+            <label>Tanggal lahir</label>
+            <input name="TanggalLahir" type="date" class="form-control" id="TanggalLahir">
+          </div>
+          <div class="form-group">
+            <label>Jenis Kelamin</label>
+            <select class="form-control" id="JenisKelamin" name="JenisKelamin">
+              <option disabled>Jenis Kelamin</option>
+              <option value="Laki-laki">Laki-Laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
           </div>
           <div class="form-group">
             <label>Alamat</label>
-            <input name="kode_akun" type="text" class="form-control" id="kode_akun">
-          </div>
-          <div class="form-group">
-            <label>Kota</label>
-            <input name="kode_akun" type="date" class="form-control" id="kode_akun">
-          </div>
-          <div class="form-group">
-            <label>JR</label>
-            <input name="kode_akun" type="date" class="form-control" id="kode_akun">
+            <input name="Alamat" type="text" class="form-control" id="Alamat">
           </div>
           <div class="form-group">
             <label>No Telp</label>
-            <input name="kode_akun" type="date" class="form-control" id="kode_akun">
+            <input name="Telepon" type="text" class="form-control" id="Telepon">
           </div>
           <div class="form-group">
             <label>Email</label>
-            <input name="kode_akun" type="email" class="form-control" id="kode_akun">
+            <input name="Email" type="email" class="form-control" id="Email">
           </div>
           <div class="form-group">
-            <label >Scan KTP</label>
-            <input name="foto" type="file" class="form-control" id="foto"  value="" >
+            <label>Scan KTP</label>
+            <input name="FotoKTP" type="file" class="form-control" id="FotoKTP" value="">
             <i></i>
           </div>
-          
+
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
             <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#showmessage">Tambah data</button>
@@ -112,42 +112,40 @@
   <div class="card-body" style="font-size: 15px;">
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        
+
         <thead style="background-color: #ddd;">
           <tr class="text-center">
             <th>Nama</th>
             <th>Tanggal Lahir</th>
+            <th>Jenis Kelamin</th>
             <th>Alamat</th>
-            <th>kota</th>
-            <th>JR</th>
             <th>No. Telepon</th>
             <th>Email</th>
             <th>Scan KTP</th>
             <th>Aksi</th>
           </tr>
         </thead>
-       
+
         <tbody>
+          @foreach($dataKonsumen as $dk)
           <tr class="text-center">
-            <th>gagag</th>
-            <th>gagag</th>
-            <th>gagag</th>
-            <th>gagag</th>
-            <th>gagag</th>
-            <th>gagag</th>
-            <th>gagag</th>
-            <th>
-              <img src="" alt="">
-            </th>
+            <th>{{$dk->NamaLengkap}}</th>
+            <th>{{$dk->TanggalLahir}}</th>
+            <th>{{$dk->JenisKelamin}}</th>
+            <th>{{$dk->Alamat}}</th>
+            <th>{{$dk->Telepon}}</th>
+            <th>{{$dk->Email}}</th>
+            <th><img src="{{ asset('img/'. $dk->FotoKTP)}}" alt="ScanKTP" width="100"></th>
             <th>
               <a href="/konsumen/edit" class="btn btn-primary">Update</a><br>
               <a href="#" class="btn btn-danger">Delete</a>
             </th>
           </tr>
+          @endforeach
         </tbody>
-        
+
       </table>
-     
+
     </div>
   </div>
 </div>

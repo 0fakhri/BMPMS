@@ -14,7 +14,12 @@ class CreateLegalitasTable extends Migration
     public function up()
     {
         Schema::create('legalitas', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('LegalitasID');
+            $table->string('No_Legalitas', 30);
+            $table->date('TanggalTerbit');
+            $table->bigInteger('No_Unit');
+            $table->string('StatusLegalitas', 30);
+            $table->bigInteger('TipePerumahan_TipeID');
             $table->timestamps();
         });
     }

@@ -12,74 +12,72 @@
 */
 
 // Route::get('/', 'home@index');
-  Route::get('/data_akun', 'dataakun@index');
-  Route::post('/data_akun/create','dataakun@create');
-  Route::get('/data_akun/edit/{id}', 'dataakun@edit');
-  Route::post('/data_akun/update/{id}', 'dataakun@update');
-  Route::get('/data_akun/{id}','dataakun@show');
-  Route::get('/dashboard','dataakun@show');
 
+use App\Http\Controllers\UserController;
+
+Auth::routes();
+Route::group(['middleware' => 'auth'], function () {
   Route::get('/', function () {
-    return view ('manajer.dashboard');
-    });
+    return view('manajer.dashboard');
+  });
 
-  Route::get('/user', function () {
-    return view ('manajer.user');
-  });
-  
-  Route::get('/konsumen', function () {
-    return view ('manajer.konsumen');
-  });
+  Route::post('/user', 'userController@store');
+  Route::get('/user', 'userController@index');
+  Route::delete('/user/{id}/hapus', 'UserController@destroy');
+  Route::post('/konsumen', 'konsumenController@store');
+  Route::get('/konsumen', 'konsumenController@index');
+  Route::delete('/konsumen/{id}/hapus', 'konsumenController@destroy');
 
   Route::get('/kebutuhan-proyek', function () {
-    return view ('manajer.kebutuhan_proyek');
+    return view('manajer.kebutuhan_proyek');
   });
 
   Route::get('/spr', function () {
-    return view ('manajer.spr');
+    return view('manajer.spr');
   });
 
   Route::get('/verif-spr', function () {
-    return view ('manajer.verif_spr');
+    return view('manajer.verif_spr');
   });
 
   Route::get('/pembayaran', function () {
-    return view ('manajer.pembayaran');
+    return view('manajer.pembayaran');
   });
 
   Route::get('/legalitas', function () {
-    return view ('manajer.legalitas');
+    return view('manajer.legalitas');
   });
 
   Route::get('/tipe-perumahan', function () {
-    return view ('manajer.tipePerumahan');
+    return view('manajer.tipePerumahan');
   });
 
   Route::get('/user/edit', function () {
-    return view ('manajer.editUser');
+    return view('manajer.editUser');
   });
 
   Route::get('/konsumen/edit', function () {
-    return view ('manajer.editKonsumen');
+    return view('manajer.editKonsumen');
   });
 
   Route::get('/spr/edit', function () {
-    return view ('manajer.editSpr');
+    return view('manajer.editSpr');
   });
 
   Route::get('/pembayaran/edit', function () {
-    return view ('manajer.editPembayaran');
+    return view('manajer.editPembayaran');
   });
 
   Route::get('/legalitas', function () {
-    return view ('manajer.legalitas');
+    return view('manajer.legalitas');
   });
 
   Route::get('/legalitas/edit', function () {
-    return view ('manajer.editLegalitas');
+    return view('manajer.editLegalitas');
   });
 
   Route::get('/tipe-perumahan/edit', function () {
+<<<<<<< Updated upstream
     return view ('manajer.editTipePerumahan');
   });
 
@@ -93,3 +91,10 @@ Route::view('/owner/detail_konsumen', 'owner/detail_konsumen');
 Route::view('/owner/proyek', 'owner/proyek');
 Route::view('/owner/legalitas', 'owner/legalitas');
 Route::view('/owner/tipe_perumahan', 'owner/tipe_perumahan');
+=======
+    return view('manajer.editTipePerumahan');
+  });
+
+  Route::get('/home', 'HomeController@index')->name('home');
+});
+>>>>>>> Stashed changes
