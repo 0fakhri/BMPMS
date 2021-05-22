@@ -82,3 +82,14 @@
   Route::get('/tipe-perumahan/edit', function () {
     return view ('manajer.editTipePerumahan');
   });
+
+//OWNER
+Route::view('/', 'owner/index');
+Route::view('/owner/akun', 'owner/akun');
+Route::view('/owner/pembayaran', 'owner/pembayaran');
+Route::view('/owner/detail_pembayaran', 'owner/detail_pembayaran');
+Route::view('/owner/konsumen', 'owner/konsumen');
+Route::view('/owner/detail_konsumen', 'owner/detail_konsumen');
+Route::view('/owner/proyek', 'owner/proyek');
+Route::view('/owner/legalitas', 'owner/legalitas');
+Route::view('/owner/tipe_perumahan', 'owner/tipe_perumahan');
