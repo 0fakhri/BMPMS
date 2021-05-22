@@ -111,6 +111,7 @@
     </div>
   </div>
 </div>
+<!-- end modal -->
 
 <!-- Table -->
 <div class="card shadow mb-4">
