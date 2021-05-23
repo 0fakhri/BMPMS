@@ -16,7 +16,7 @@ class UserController extends Controller
     public function index()
     {
         $dataUser = User::all();
-        return view('manajer.user', compact('dataUser'));
+        return view('owner.akun', compact('dataUser'));
     }
 
     /**
@@ -49,7 +49,7 @@ class UserController extends Controller
             'password' => bcrypt($request->password),
             'role' => $request->role,
         ]);
-        return redirect('/user')->with('sukses', 'Data User Berhasil Ditambah');
+        return redirect(url('/owner/akun'))->with('sukses', 'Data User Berhasil Ditambah');
     }
 
     /**
@@ -83,7 +83,33 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $email = User::where('email', $request->email_edit)->get();
+        $users = DB::table('users')
+            ->where('email', $request->email_edit)
+            ->first();
+        if (!empty($users)) {
+            if ($users->id == $id) {
+                $email =  'required';
+            } else {
+                $email =  'required|unique:users,email';
+            }
+        } else {
+            $email =  'required|unique:users,email';
+        }
+        $request->validate([
+            'name_edit' => 'required',
+            'email_edit' => $email,
+            'password_edit' => 'required',
+            'role_edit' => 'required'
+        ]);
+        User::where('id', $id)
+            ->update([
+                'name' => $request->name_edit,
+                'email' => $request->email_edit,
+                'password' => bcrypt($request->password_edit),
+                'role' => $request->role_edit
+            ]);
+        return redirect(url('/owner/akun'))->with('sukses', 'Data User Berhasil Diupdate');
     }
 
     /**
