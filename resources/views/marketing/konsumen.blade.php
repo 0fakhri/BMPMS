@@ -100,7 +100,7 @@
     </div>
   </div>
 </div>
-<!-- end Modal tmbah paket -->
+<!-- end Modal  -->
 
 <!-- Table -->
 <div class="card shadow mb-4">
