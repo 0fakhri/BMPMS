@@ -13,7 +13,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/dashboard')}}">
+        <a class="nav-link" href="{{url('/manajer')}}">
           <i class="fas fa-fw fa-home"></i>
           <span>Dashboard</span></a>
       </li>
@@ -25,42 +25,28 @@
 
       <!-- Nav Item - Pages Collapse approval-->
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/user')}}">
-          <i class="fas fa-shopping-cart"></i>
-          <span>Data User</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('/kebutuhan-proyek')}}">
+        <a class="nav-link" href="{{url('/manajer/kproyek')}}">
           <i class="fas fa-shopping-cart"></i>
           <span>Data Kebutuhan Proyek</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/konsumen')}}">
+        <a class="nav-link" href="{{url('/manajer/konsumen')}}">
           <i class="fas fa-shopping-cart"></i>
           <span>Data Konsumen</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/spr')}}">
+        <a class="nav-link" href="{{url('/manajer/spr')}}">
           <i class="fas fa-shopping-cart"></i>
           <span>Data SPR</span></a>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/verif-spr')}}">
-          <i class="fas fa-shopping-cart"></i>
-          <span>Verifikasi Data SPR</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('/pembayaran')}}">
-          <i class="fas fa-shopping-cart"></i>
-          <span>Data Pembayaran</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('/legalitas')}}">
+        <a class="nav-link" href="{{url('/manajer/legalitas')}}">
           <i class="fas fa-shopping-cart"></i>
           <span>Data Legalitas</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/tipe-perumahan')}}">
+        <a class="nav-link" href="{{url('/manajer/tipeperumahan')}}">
           <i class="fas fa-shopping-cart"></i>
           <span>Data Tipe Perumahan</span></a>
       </li>

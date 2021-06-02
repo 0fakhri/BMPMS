@@ -15,11 +15,11 @@ class CreateLegalitasTable extends Migration
     {
         Schema::create('legalitas', function (Blueprint $table) {
             $table->bigIncrements('LegalitasID');
-            $table->string('No_Legalitas', 30);
-            $table->date('TanggalTerbit');
+            $table->string('No_Legalitas', 30)->nullable();
+            $table->date('TanggalTerbit')->nullable();
             $table->bigInteger('No_Unit');
             $table->string('StatusLegalitas', 30);
-            $table->bigInteger('TipePerumahan_TipeID');
+            $table->bigInteger('SPR_SPR_ID');
             $table->timestamps();
         });
     }

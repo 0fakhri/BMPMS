@@ -13,7 +13,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/dashboard')}}">
+        <a class="nav-link" href="{{url('/divmarketing')}}">
           <i class="fas fa-fw fa-home"></i>
           <span>Dashboard</span></a>
       </li>
@@ -25,22 +25,17 @@
 
       <!-- Nav Item - Pages Collapse approval-->
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/user')}}">
-          <i class="fas fa-shopping-cart"></i>
-          <span>Data User</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('/konsumen')}}">
+        <a class="nav-link" href="{{url('/divmarketing/konsumen')}}">
           <i class="fas fa-shopping-cart"></i>
           <span>Data Konsumen</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/spr')}}">
+        <a class="nav-link" href="{{url('/divmarketing/spr')}}">
           <i class="fas fa-shopping-cart"></i>
           <span>Data SPR</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/tipe-perumahan')}}">
+        <a class="nav-link" href="{{url('/divmarketing/tipeperumahan')}}">
           <i class="fas fa-shopping-cart"></i>
           <span>Data Tipe Perumahan</span></a>
       </li>

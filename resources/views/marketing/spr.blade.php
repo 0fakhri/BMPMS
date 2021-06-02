@@ -20,13 +20,13 @@
 @endif
 @if($errors->has([]))
 <!-- Modal -->
-    <div class="alert alert-danger" role="alert">
-           <span class="help-block">Data tidak boleh kosong / Data yang diisi tidak valid, isi data dengan benar</span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-    </div>
-  @endif
+<div class="alert alert-danger" role="alert">
+  <span class="help-block">Data tidak boleh kosong / Data yang diisi tidak valid, isi data dengan benar</span>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
 <ol class="breadcrumb">
   <li><i class="fa fa-home"></i><a href="/dashboard">&nbsp;Home&nbsp;</a></li>
   <li>&#47;&nbsp;<i class="fas fa"></i>&nbsp;Data SPR (Surat Pemesanan Rumah)&nbsp;</li>
@@ -37,7 +37,7 @@
   <div class="col-sm-12 col-md-6">
     <button type="button" class="btn btn-danger btn-rounded btn-outline
     hidden-xs hidden-sm waves-effect waves-light" data-toggle="modal" data-target="#createdata">
-    <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>Tambah Data</button>
+      <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>Tambah Data</button>
   </div>
 </div>
 
@@ -52,34 +52,62 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="/divmarketing/spr" method="POST" enctype="multipart/form-data">
           {{csrf_field()}}
           <div class="form-group ">
-            <label >No. SPR</label>
-            <input name="nama_akun" type="number" class="form-control" id="nama_akun">
-            @if($errors->has('akun'))
-              <span class="help-block">{{($errors->first('nama_akun'))}}</span>
+            <label>No. SPR</label>
+            <input name="No_SPR" type="text" class="form-control" id="No_SPR">
+            @if($errors->has('No_SPR'))
+            <span class="help-block">{{($errors->first('No_SPR'))}}</span>
             @endif
           </div>
-          <div class="form-group">
-            <label >Tanggal Pemesanan</label>
-            <input name="kode_akun" type="date" class="form-control" id="kode_akun">
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label for="StatusPersetujuan">Tipe Perumahan</label>
+                <select class="form-control" id="TipePerumahan_TipeID" name="TipePerumahan_TipeID">
+                  <option disabled>Tipe Perumahan</option>
+                  @foreach($tipeperumahan as $tp)
+                  <option value="{{$tp->TipeID}}">{{$tp->NamaTipe}}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label for="StatusPersetujuan">No Unit</label>
+                <input name="No_Unit" type="text" class="form-control" id="No_Unit">
+              </div>
+            </div>
           </div>
           <div class="form-group">
-            <label >DP</label>
+            <label>Tanggal Pemesanan</label>
+            <input name="TanggalSPR" type="date" class="form-control" id="TanggalSPR">
+          </div>
+          <div class="form-group">
+            <label>Uang Muka</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <div class="input-group-text">Rp</div>
               </div>
-              <input type="number" class="form-control" id="inlineFormInputGroup">
+              <input type="number" class="form-control" name="UangMuka" id="UangMuka">
             </div>
           </div>
+          <input type="hidden" value="Belum Disetujui" id="StatusSPR" name="StatusSPR">
           <div class="form-group">
-            <label>Dokumen SPR</label>
-            <input name="foto" type="file" class="form-control" id="foto"  value="" >
-            <i></i>
+            <label for="StatusPersetujuan">Konsumen</label>
+            <select class="form-control" id="Konsumen_KonsumenID" name="Konsumen_KonsumenID">
+              <option disabled>Konsumen</option>
+              @foreach($konsumen as $k)
+              <option value="{{$k->KonsumenID}}">{{$k->NamaLengkap}}</option>
+              @endforeach
+            </select>
           </div>
-          
+          <div class=" form-group">
+            <label>Keterangan</label><br>
+            <textarea name="Keterangan" id="Keterangan" cols="55" rows="5"></textarea>
+          </div>
+
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
             <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#showmessage">Tambah data</button>
@@ -101,34 +129,43 @@
   <div class="card-body" style="font-size: 15px;">
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        
+
         <thead style="background-color: #ddd;">
           <tr class="text-center">
             <th>No. SPR</th>
-            <th>Tanggal Pemesanan</th>
-            <th>DP</th>
-            <th>Dokumen SPR</th>
+            <th>Tipe</th>
+            <th>Tanggal SPR</th>
+            <th>Uang Muka</th>
+            <th>Keterangan</th>
+            <th>Status</th>
+            <th>Nama Konsumen</th>
             <th>Aksi</th>
           </tr>
         </thead>
-       
+
         <tbody>
+          @foreach($spr as $s)
           <tr class="text-center">
-            <th>gagag</th>
-            <th>gagag</th>
-            <th>gagag</th>
+            <th>{{$s->No_SPR}}</th>
+            <th>{{$s->NamaTipe}}</th>
+            <th>{{$s->TanggalSPR}}</th>
+            <th>{{$s->UangMuka}}</th>
+            <th>{{$s->Keterangan}}</th>
+            <th>{{$s->StatusSPR}}</th>
+            <th>{{$s->NamaLengkap}}</th>
             <th>
-              <a href="#" class="btn btn-primary">Lihat</a>
-            </th>
-            <th>
-              <a href="/spr/edit" class="btn btn-primary">Update</a><br>
-              <a href="#" class="btn btn-danger">Delete</a>
+              @if($s->StatusSPR != "Belum Disetujui")
+              <a href="/spr/pdf/{{$s->SPR_ID}}" target="_blank" class="btn btn-primary">Cetak SPR</a>
+              @else
+              {{__('-')}}
+              @endif
             </th>
           </tr>
+          @endforeach
         </tbody>
-        
+
       </table>
-     
+
     </div>
   </div>
 </div>

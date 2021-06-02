@@ -15,36 +15,36 @@
     </div>
   </div>
   <div class="container">
-    <img class="img-fluid text-left" src="KTP.jpeg" width="400"> 
+    <img class="img-fluid text-left" src="{{ asset('img/'. $detail_konsumen->FotoKTP)}}" width="400">
     <div class="row">
       <div class="col-3">Nama Lengkap</div>
       <div class="col-1">:</div>
-      <div class="col-8">Ifan Rendi</div>
+      <div class="col-8">{{$detail_konsumen->NamaLengkap}}</div>
     </div>
     <div class="row">
       <div class="col-3">Tanggal Lahir</div>
       <div class="col-1">:</div>
-      <div class="col-8">Jember</div>
+      <div class="col-8">{{$detail_konsumen->TanggalLahir}}</div>
     </div>
     <div class="row">
       <div class="col-3">Jenis Kelamin</div>
       <div class="col-1">:</div>
-      <div class="col-8">ifanrendi@gmail.com</div>
+      <div class="col-8">{{$detail_konsumen->JenisKelamin}}</div>
     </div>
     <div class="row">
       <div class="col-3">Alamat</div>
       <div class="col-1">:</div>
-      <div class="col-8">090909090</div>
+      <div class="col-8">{{$detail_konsumen->Alamat}}</div>
     </div>
     <div class="row">
       <div class="col-3">Email</div>
       <div class="col-1">:</div>
-      <div class="col-8">1</div>
+      <div class="col-8">{{$detail_konsumen->Email}}</div>
     </div>
     <div class="row">
       <div class="col-3">Telepon</div>
       <div class="col-1">:</div>
-      <div class="col-8">Rp. 1.000.000</div>
+      <div class="col-8">{{$detail_konsumen->Telepon}}</div>
     </div>
   </div>
   <div class="card-body" style="font-size: 15px;">

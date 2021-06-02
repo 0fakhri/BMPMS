@@ -17,29 +17,44 @@
   <div class="card-body" style="font-size: 15px;">
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        
+
         <thead style="background-color: #ddd;">
           <tr class="text-center">
             <th>No. SPR</th>
-            <th>Tanggal Pemesanan</th>
-            <th>DP</th>
-            <th>Dokumen SPR</th>
+            <th>Tipe</th>
+            <th>Tanggal SPR</th>
+            <th>Uang Muka</th>
+            <th>Keterangan</th>
+            <th>Status</th>
+            <th>Nama Konsumen</th>
+            <th>Aksi</th>
           </tr>
         </thead>
-       
+
         <tbody>
+          @foreach($spr as $s)
           <tr class="text-center">
-            <th>gagag</th>
-            <th>gagag</th>
-            <th>gagag</th>
+            <th>{{$s->No_SPR}}</th>
+            <th>{{$s->NamaTipe}}</th>
+            <th>{{$s->TanggalSPR}}</th>
+            <th>{{$s->UangMuka}}</th>
+            <th>{{$s->Keterangan}}</th>
+            <th>{{$s->StatusSPR}}</th>
+            <th>{{$s->NamaLengkap}}</th>
             <th>
-              <a href="#" class="btn btn-primary">Lihat</a>
+              @if($s->StatusSPR == "Disetujui")
+              <a href="/spr/pdf/{{$s->SPR_ID}}" target="_blank" class="btn btn-sm btn-outline-warning"><i class="fas fa-print"></i> Cetak SPR</a><br>
+              <a href="/divkeuangan/spr/pembayaran/{{$s->SPR_ID}}" class="mt-2 btn btn-sm btn-outline-primary"><i class="fas fa-eyes"></i> Detail Pembayaran</a>
+              @else
+              {{__('-')}}
+              @endif
             </th>
           </tr>
+          @endforeach
         </tbody>
-        
+
       </table>
-     
+
     </div>
   </div>
 </div>

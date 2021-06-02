@@ -142,11 +142,13 @@
                 <i class="fa fa-edit fa-fw" aria-hidden="true"></i>Edit</button>
               <!-- <button type="button" class="btn btn-sm btn-outline-danger">
                 <i class="fa fa-trash fa-fw" aria-hidden="true"></i>Hapus</button> -->
+              @if($du->role != 'Owner')
               <form class="d-inline" action="/owner/akun/{{$du->id}}" method="post">
                 @method('delete')
                 @csrf
                 <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash fa-fw"></i> Hapus</button>
               </form>
+              @endif
             </td>
           </tr>
           @endforeach
@@ -212,4 +214,27 @@
   </div>
 </div>
 
+@endsection
+@section('script')
+<script type="text/javascript">
+  $(document).ready(function() {
+    var table = $('#dataTable').DataTable();
+
+    table.on('click', '.edit', function() {
+      $tr = $(this).closest('tr');
+      if ($($tr).hasClass('Child')) {
+        $tr = $tr.prev('.parent');
+      }
+
+      var data = table.row($tr).data();
+      console.log(data);
+
+      $('#name_edit').val(data[1]);
+      $('#email_edit').val(data[2]);
+      $('#role_edit').val(data[3]);
+      $('#editForm').attr('action', '/owner/akun/' + data[0]);
+      // $('#editdata').modal('show');
+    });
+  });
+</script>
 @endsection

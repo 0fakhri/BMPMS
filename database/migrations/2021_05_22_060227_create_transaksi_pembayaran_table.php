@@ -21,7 +21,6 @@ class CreateTransaksiPembayaranTable extends Migration
             $table->string('BuktiTransaksi');
             $table->string('Keterangan');
             $table->string('StatusPembayaran', 30);
-            $table->bigInteger('Legalitas_LegalitasID');
             $table->bigInteger('SPR_SPR_ID');
             $table->timestamps();
         });

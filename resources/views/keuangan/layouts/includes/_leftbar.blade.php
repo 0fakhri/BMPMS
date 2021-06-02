@@ -25,45 +25,20 @@
 
       <!-- Nav Item - Pages Collapse approval-->
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/user')}}">
-          <i class="fas fa-shopping-cart"></i>
-          <span>Data User</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('/kebutuhan-proyek')}}">
-          <i class="fas fa-shopping-cart"></i>
-          <span>Data Kebutuhan Proyek</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('/konsumen')}}">
+        <a class="nav-link" href="{{url('/divkeuangan/konsumen')}}">
           <i class="fas fa-shopping-cart"></i>
           <span>Data Konsumen</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url('/spr')}}">
+        <a class="nav-link" href="{{url('/divkeuangan/spr')}}">
           <i class="fas fa-shopping-cart"></i>
           <span>Data SPR</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('/verif-spr')}}">
-          <i class="fas fa-shopping-cart"></i>
-          <span>Verifikasi Data SPR</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('/pembayaran')}}">
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="{{url('/divkeuangan/pembayaran')}}">
           <i class="fas fa-shopping-cart"></i>
           <span>Data Pembayaran</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('/legalitas')}}">
-          <i class="fas fa-shopping-cart"></i>
-          <span>Data Legalitas</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('/tipe-perumahan')}}">
-          <i class="fas fa-shopping-cart"></i>
-          <span>Data Tipe Perumahan</span></a>
-      </li>
+      </li> -->
 
       <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">

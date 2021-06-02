@@ -52,7 +52,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="{{url('/konsumen')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{url('/manajer/konsumen')}}" method="POST" enctype="multipart/form-data">
           {{csrf_field()}}
           <div class="form-group ">
             <label>NamaLengkap</label>
@@ -129,17 +129,21 @@
         <tbody>
           @foreach($dataKonsumen as $dk)
           <tr class="text-center">
-            <th>{{$dk->NamaLengkap}}</th>
-            <th>{{$dk->TanggalLahir}}</th>
-            <th>{{$dk->JenisKelamin}}</th>
-            <th>{{$dk->Alamat}}</th>
-            <th>{{$dk->Telepon}}</th>
-            <th>{{$dk->Email}}</th>
-            <th><img src="{{ asset('img/'. $dk->FotoKTP)}}" alt="ScanKTP" width="100"></th>
-            <th>
-              <a href="/konsumen/edit" class="btn btn-primary">Update</a><br>
-              <a href="#" class="btn btn-danger">Delete</a>
-            </th>
+            <td>{{$dk->NamaLengkap}}</td>
+            <td>{{$dk->TanggalLahir}}</td>
+            <td>{{$dk->JenisKelamin}}</td>
+            <td>{{$dk->Alamat}}</td>
+            <td>{{$dk->Telepon}}</td>
+            <td>{{$dk->Email}}</td>
+            <td><img src="{{ asset('img/'. $dk->FotoKTP)}}" alt="ScanKTP" width="100"></td>
+            <td>
+              <a href="/manajer/konsumen/{{$dk->KonsumenID}}/edit" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i>Update</a>
+              <form class="d-inline" action="/manajer/konsumen/{{ $dk->KonsumenID }}" method="post">
+                @method('delete')
+                @csrf
+                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-times"></i> Hapus</button>
+              </form>
+            </td>
           </tr>
           @endforeach
         </tbody>

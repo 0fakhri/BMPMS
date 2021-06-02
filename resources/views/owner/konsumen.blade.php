@@ -17,16 +17,7 @@
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <div class="row">
-          <form  method="get" action="{{url('')}}" role="search">
-            <div class="col-sm-12 col-md-4">
-              <div id="dataTable_filter" class="dataTables_filter">
-                <label>Search:<input name="cari" type="text" class="form-control form-control-sm" placeholder="" aria-describedby="basic-addon2"></label>
-                <button class="btn btn-outline-info" type="submit" style="height: 2rem" >
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
+
         </div>
         <thead style="background-color: #ddd;">
           <tr class="text-center">
@@ -35,18 +26,24 @@
             <th>Alamat</th>
             <th>Email</th>
             <th>Telepon</th>
+            <th>Scan KTP</th>
             <th>Detail</th>
           </tr>
         </thead>
         <tbody>
-          <tr  class="text-center">
-            <td>1</td>
-            <td>rendi</td>
-            <td>Puger</td>
-            <td>rendi@gmail.com</td>
-            <td>08989898988</td>
-            <td class="text-center"><a href="{{url('/owner/detail_konsumen')}}" class="badge badge-primary fa fa-eye"> LIHAT</a></td>
+          @foreach($dataKonsumen as $dk)
+          <tr class="text-center">
+            <td>{{$dk->KonsumenID}}</td>
+            <td>{{$dk->NamaLengkap}}</td>
+            <td>{{$dk->Alamat}}</td>
+            <td>{{$dk->Email}}</td>
+            <td>{{$dk->Telepon}}</td>
+            <td><img src="{{ asset('img/'. $dk->FotoKTP)}}" alt="ScanKTP" width="100"></td>
+            <td>
+              <a href="/owner/konsumen/{{$dk->KonsumenID}}/detail_konsumen" class="badge badge-primary fa fa-eye"> LIHAT</a>
+            </td>
           </tr>
+          @endforeach
         </tbody>
       </table>
     </div>

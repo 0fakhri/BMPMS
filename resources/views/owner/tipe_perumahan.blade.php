@@ -16,7 +16,7 @@
   <div class="card-body" style="font-size: 15px;">
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        <div class="row">
+        <!-- <div class="row">
           <form  method="get" action="{{url('')}}" role="search">
             <div class="col-sm-12 col-md-4">
               <div id="dataTable_filter" class="dataTables_filter">
@@ -27,7 +27,7 @@
               </div>
             </div>
           </form>
-        </div>
+        </div> -->
         <thead style="background-color: #ddd;">
           <tr class="text-center">
             <th>Tipe ID</th>

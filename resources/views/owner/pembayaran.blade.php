@@ -1,10 +1,74 @@
 @extends('owner.layouts.master')
 @section('content')
-
+@if(session('sukses'))
+<!-- Modal -->
+<div class="alert alert-success" role="alert">
+  {{session('sukses')}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
+@if(session('gagal'))
+<!-- Modal -->
+<div class="alert alert-warning" role="alert">
+  {{session('gagal')}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
+@if($errors->has([]))
+<!-- Modal -->
+<div class="alert alert-danger" role="alert">
+  <span class="help-block">{{$$errors}}Data tidak boleh kosong / Data yang diisi tidak valid, isi data dengan benar</span>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
 <ol class="breadcrumb">
-  <li><i class="fa fa-home"></i><a href="/">&nbsp;Home&nbsp;</a></li>
-  <li>&#47;&nbsp;<i class="fas fa-people-carry"></i>&nbsp;Data Pembayaran&nbsp;</li>
+  <li><i class="fa fa-home"></i><a href="/dashboard">&nbsp;Home&nbsp;</a></li>
+  <li>&#47;&nbsp;<i class="fas fa"></i>&nbsp;Data Pembayaran&nbsp;</li>
 </ol>
+
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <div class="col-sm-12 col-md-6">
+      <h6 class="m-0 font-weight-bold text-primary">Detail SPR</h6>
+    </div>
+  </div>
+  <div class="container">
+    <table border="0">
+      <tbody>
+        <tr>
+          <td><b>No SPR</b></td>
+          <td>:</td>
+          <td><b>{{$spr->No_SPR}}</b><br></td>
+        </tr>
+        <tr>
+          <td>Nama Konsumen</td>
+          <td>:</td>
+          <td>{{$spr->NamaLengkap}}<br></td>
+        </tr>
+        <tr>
+          <td>Tanggal SPR</td>
+          <td>:</td>
+          <td>{{$spr->TanggalSPR}}</td>
+        </tr>
+        <tr>
+          <td>Tipe Rumah</td>
+          <td>:</td>
+          <td>{{$spr->NamaTipe}}</td>
+        </tr>
+        <tr>
+          <td>Uang Muka</td>
+          <td>:</td>
+          <td>{{$spr->No_SPR}}</td>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <!-- Table -->
 <div class="card shadow mb-4">
@@ -16,41 +80,82 @@
   <div class="card-body" style="font-size: 15px;">
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        <div class="row">
-          <form  method="get" action="{{url('')}}" role="search">
-            <div class="col-sm-12 col-md-4">
-              <div id="dataTable_filter" class="dataTables_filter">
-                <label>Search:<input name="cari" type="text" class="form-control form-control-sm" placeholder="" aria-describedby="basic-addon2"></label>
-                <button class="btn btn-outline-info" type="submit" style="height: 2rem" >
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
+
         <thead style="background-color: #ddd;">
           <tr class="text-center">
-            <th>ID</th>
-            <th>Nama</th>
-            <th>Harga</th>
-            <th>No SPR</th>
+            <th hidden></th>
+            <th>Tanggal Transaksi</th>
+            <th>Nominal Transaksi</th>
             <th>Sisa Pembayaran</th>
-            <th>Aksi</th>
+            <th>Bukti Pembayaran</th>
+            <th>Keterangan</th>
+            <th>Status Pembayaran</th>
           </tr>
         </thead>
+
         <tbody>
+          @foreach($pembayaran as $pb)
           <tr class="text-center">
-            <td>1</td>
-            <td>rendi</td>
-            <td>Rp. 1.000.000</td>
-            <td>1</td>
-            <td>Rp. 300.000</td>
-            <td><a href="{{url('/owner/detail_pembayaran')}}" class="badge badge-primary fa fa-eye"> LIHAT</a></td>
+            <td hidden>{{$pb->BuktiTransaksi}}</td>
+            <td>{{$pb->TanggalTransaksi}}</td>
+            <td>{{$pb->NominalTransaksi}}</td>
+            <td>{{$pb->SisaPembayaran}}</td>
+            <td><a href="" class="edit" data-toggle="modal" data-target="#lihatBukti"><img src="{{ asset('fileupload/BuktiPembayaran/'. $pb->BuktiTransaksi)}}" alt="" width="100"></a>
+            </td>
+
+            <td>{{$pb->Keterangan}}</td>
+            <td>
+              @if($pb->StatusPembayaran == 'Lunas')
+              <span class="my-2 btn btn-success">{{$pb->StatusPembayaran}}</span>
+              @else
+              {{$pb->StatusPembayaran}}
+              @endif
+            </td>
           </tr>
+          @endforeach
         </tbody>
+
       </table>
+
     </div>
   </div>
 </div>
 
+<!-- Modal tmbah paket -->
+<div class="modal fade" id="lihatBukti" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <!-- <div class="modal-content"> -->
+    <div class="modal-body">
+      <div class="mx-auto">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <img src="" id="gambarBukti" alt="">
+      </div>
+    </div>
+    <!-- </div> -->
+  </div>
+</div>
+<!-- end modal -->
+
+@endsection
+
+@section('script')
+<script type="text/javascript">
+  $(document).ready(function() {
+    var table = $('#dataTable').DataTable();
+
+    table.on('click', '.edit', function() {
+      $tr = $(this).closest('tr');
+      if ($($tr).hasClass('Child')) {
+        $tr = $tr.prev('.parent');
+      }
+
+      var data = table.row($tr).data();
+      console.log(data);
+      $('#gambarBukti').attr('src', '/fileupload/BuktiPembayaran/' + data[0]);
+      // $('#editdata').modal('show');
+    });
+  });
+</script>
 @endsection

@@ -15,6 +15,7 @@ class CreateTipePerumahanTable extends Migration
     {
         Schema::create('tipe_perumahan', function (Blueprint $table) {
             $table->bigIncrements('TipeID');
+            $table->String('NamaTipe');
             $table->bigInteger('LuasTanah');
             $table->bigInteger('LuasBangunan');
             $table->bigInteger('Harga');

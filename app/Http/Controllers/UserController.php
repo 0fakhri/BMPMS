@@ -109,7 +109,7 @@ class UserController extends Controller
                 'password' => bcrypt($request->password_edit),
                 'role' => $request->role_edit
             ]);
-        return redirect(url('/owner/akun'))->with('sukses', 'Data User Berhasil Diupdate');
+        return back()->with('sukses', 'Data User Berhasil Diupdate');
     }
 
     /**

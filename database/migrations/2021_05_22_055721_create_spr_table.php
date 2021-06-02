@@ -21,6 +21,7 @@ class CreateSprTable extends Migration
             $table->string('Keterangan');
             $table->string('StatusSPR', 30);
             $table->bigInteger('Konsumen_KonsumenID');
+            $table->bigInteger('TipePerumahan_TipeID');
             $table->timestamps();
         });
     }

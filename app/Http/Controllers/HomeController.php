@@ -30,4 +30,29 @@ class HomeController extends Controller
     {
         return view('owner.index');
     }
+
+    public function indexManajer()
+    {
+        return view('manajer.dashboard');
+    }
+
+    public function indexMarketing()
+    {
+        return view('marketing.dashboard');
+    }
+
+    public function indexKeuangan()
+    {
+        return view('keuangan.dashboard');
+    }
+
+    public function indexKontraktor()
+    {
+        return view('owner.index');
+    }
+
+    public function indexSupplier()
+    {
+        return view('owner.index');
+    }
 }
