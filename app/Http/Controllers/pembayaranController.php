@@ -60,6 +60,12 @@ class pembayaranController extends Controller
      */
     public function store(Request $request, $id)
     {
+        $request->validate([
+            'NominalTransaksi' => 'required',
+            'BuktiTransaksi' => 'required',
+            'Keterangan' => 'required'
+        ]);
+
         // ambil harga unitnya & uangmuka
         $harga = DB::table('spr')
             ->join('tipe_perumahan', 'spr.TipePerumahan_TipeID', 'tipe_perumahan.TipeID')
@@ -68,12 +74,6 @@ class pembayaranController extends Controller
             ->first();
 
         $cekBayar = pembayaran::where('SPR_SPR_ID', $id)->count();
-
-        $request->validate([
-            'NominalTransaksi' => 'required',
-            'BuktiTransaksi' => 'required',
-            'Keterangan' => 'required'
-        ]);
         $file_BT = $request->BuktiTransaksi;
         $nama_BT = date('Y-m-d-h-i-s') . $file_BT->getClientOriginalName();
 
@@ -99,7 +99,6 @@ class pembayaranController extends Controller
         }
 
         // cek lunas
-
 
         DB::table('transaksi_pembayaran')->insert([
             'TanggalTransaksi' => date('Y-m-d'),
